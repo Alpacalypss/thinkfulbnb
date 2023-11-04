@@ -6,7 +6,7 @@ body {
 
 h2 {
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0 10px 10px 10px;
   text-align: center;
 }
@@ -28,10 +28,21 @@ section {
 section.alternate-background {
   background-color: #00a699;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.alternate-background img {
+  padding: 10px;
+}
+
+section.alternate-background p {
+  font-size: 20px;
 }
 
 main img {
-  width: 100px;
+  width: 90%;
 }
 
 /* ---  Groups & Items --- */
@@ -64,6 +75,12 @@ header {
   color: #fff;
 }
 
+header nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
 header nav ul li {
   list-style-type: none;
 }
@@ -74,25 +91,36 @@ header nav ul li a {
   padding: 0 20px 0 0;
 }
 
+header nav ul li:last-child a {
+  margin-right: 20px;
+}
+
 header nav ul li a:hover {
-  color: #bdbdbd;
+  color: #750d97;
   text-decoration: none;
 }
 
 /* -------  Search Form ------- */
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 2px solid #ff385c;
   padding: 10px;
 }
 
 form label {
   font-weight: bold;
+  width: 30%;
+  align-self: center;
+  position: relative;
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
-  width: 180px;
+  flex: 1;
+  padding: 2px;
+  margin-bottom: 10px;
 }
 
 form button {
@@ -117,3 +145,62 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 600px) {
+  header {
+    background-color: #ff385c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header nav {
+    padding: 10px;
+  }
+
+  form {
+    flex-direction: row;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  .vacation-form .item {
+    display: flex block;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+  .item label, .item input, .item select, .item button {
+    display: flex;
+    width: 100%;
+  }
+  
+  .column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 10px;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .column img {
+    width: 95%;
+  }
+
+  .row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .item-double {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+}
